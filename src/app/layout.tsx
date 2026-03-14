@@ -1,49 +1,65 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin", "cyrillic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const playfair = Playfair_Display({
+  variable: "--font-serif",
+  subsets: ["latin", "cyrillic"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "CONCRETE — Коммерческий клининг | Точность определяет стандарт",
+  description: "Промышленная уборка для бизнеса. Офисы, склады, торговые центры. Скорость. Масштаб. Контроль. Стандартизированные процессы, измеримый результат.",
+  keywords: ["коммерческий клининг", "уборка офисов", "уборка складов", "клининг Москва", "промышленная уборка", "уборка торговых центров"],
+  authors: [{ name: "CONCRETE" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/logo.svg",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "CONCRETE — Коммерческий клининг",
+    description: "Промышленная уборка для бизнеса. Точность определяет стандарт.",
+    url: "https://concrete-clean.ru",
+    siteName: "CONCRETE",
     type: "website",
+    images: [
+      {
+        url: "/images/hero.jpg",
+        width: 1920,
+        height: 1080,
+        alt: "CONCRETE - Коммерческий клининг",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "CONCRETE — Коммерческий клининг",
+    description: "Промышленная уборка для бизнеса. Точность определяет стандарт.",
+    images: ["/images/hero.jpg"],
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
+      <head>
+        <link rel="preload" as="image" href="/images/hero.jpg" fetchPriority="high" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
         <Toaster />

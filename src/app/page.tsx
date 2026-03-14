@@ -156,9 +156,9 @@ function Hero() {
       ref={heroRef}
       className="relative h-[100dvh] min-h-[500px] md:min-h-[600px] flex items-end overflow-hidden"
     >
-      {/* Background Image - using native img for better compatibility */}
+      {/* Background Image - local file for Telegram browser compatibility */}
       <img
-        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+        src="/images/hero.jpg"
         alt="Бруталистская архитектура"
         className="absolute inset-0 w-full h-full object-cover object-center"
         style={{ filter: 'grayscale(100%) contrast(1.25)' }}
@@ -374,9 +374,9 @@ function Philosophy() {
 
   return (
     <section ref={sectionRef} className="relative py-20 md:py-48 overflow-hidden bg-black">
-      {/* Concrete Texture */}
+      {/* Concrete Texture - local file for Telegram browser compatibility */}
       <img
-        src="https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=1920&q=80"
+        src="/images/concrete-texture.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover opacity-20"
         style={{ filter: 'grayscale(100%)' }}
