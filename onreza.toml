@@ -1,3 +1,0 @@
-[deploy]
-health_check_path = "/"
-health_check_interval = 30
